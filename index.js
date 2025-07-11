@@ -6,14 +6,8 @@ const app = express();
 
 app.use(express.json());
 
-const matchesRoutes = require('./routes/matchRoutes');
-app.use('/api', matchesRoutes);
-
-const playersRoutes = require('./routes/playerRoutes');
-app.use('/api', playersRoutes);
-
-const teamsRoutes = require('./routes/teamRoutes');
-app.use('/api', teamsRoutes);
+const loanRoutes = require('./routes/loanRoutes');
+app.use('/api', loanRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
